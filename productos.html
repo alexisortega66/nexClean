@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos - NexClean</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+ <!-- Encabezado -->
+<header class="header-bar">
+    <div class="logo-left">
+        <img src="images/nexcleanLogo.png" alt="NexClean Logo">
+    </div>
+    <nav class="nav-bar">
+        <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+        <ul id="menu">
+            <li><a href="index.html" >Inicio</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+</header>
+
+
+    <!-- Contenido -->
+    <main class="page-content">
+        <h1>Nuestros Productos</h1>
+        <p>En NexClean contamos con una amplia variedad de productos de limpieza, seguridad y equipos profesionales.</p>
+
+        <ul>
+            <li>Limpieza sustentable</li>
+            <li>Seguridad personal</li>
+            <li>Equipos de limpieza</li>
+        </ul>
+
+        <div class="catalogo-btn">
+            <a href="#" target="_blank" class="btn">Descargar Catálogo PDF</a>
+        </div>
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>© 2025 NexClean - Todos los derechos reservados</p>
+    </footer>
+   <script>
+    document.querySelectorAll('#menu a').forEach(link => {
+        if (link.href === window.location.href) {
+            link.classList.add('active');
+        }
+    });
+</script>
+
+
+</body>
+</html>
