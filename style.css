@@ -23,7 +23,7 @@
 }
 
 .logo-left img {
-    height: 60px;
+    height: 100px;
     width: auto;
 }
 
@@ -441,4 +441,59 @@ section {
 .fade-in.show {
     opacity: 1;
     transform: translateY(0);
+}
+/* ==== Sección Cotización llamativa ==== */
+.cotizacion {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #1B3A4B 0%, #4DB6E2 100%);
+    color: var(--blanco);
+    text-align: center;
+    border-radius: 12px 12px 0 0;
+    box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
+}
+
+.cotizacion h2 {
+    font-size: 2.4rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.cotizacion .subtexto {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+/* Botón especial de cotización */
+.btn-cotizacion {
+    display: inline-block;
+    background: #25d366; /* verde WhatsApp */
+    color: white;
+    font-weight: 700;
+    padding: 16px 32px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hover */
+.btn-cotizacion:hover {
+    transform: scale(1.08);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.35);
+}
+
+/* Animación pulso */
+@keyframes pulso {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+    100% { transform: scale(1); }
+}
+
+.btn-cotizacion {
+    animation: pulso 2s infinite;
 }
