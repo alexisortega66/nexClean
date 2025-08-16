@@ -72,22 +72,45 @@
     cursor: pointer;
 }
 
+/* Menú tipo cortina en móviles */
 @media (max-width: 768px) {
+    .nav-bar {
+        position: relative;
+    }
+
     .menu-toggle {
         display: block;
+        font-size: 2rem;
+        color: var(--azul-oscuro);
+        cursor: pointer;
+        z-index: 1001;
     }
+
     .nav-bar ul {
-        display: none;
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: var(--azul-oscuro);
         flex-direction: column;
-        gap: 15px;
-        background: var(--azul-claro);
-        padding: 15px;
-        border-radius: 8px;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        transition: left 0.5s ease;
+        z-index: 1000;
     }
+
     .nav-bar ul.active {
-        display: flex;
+        left: 0;
+    }
+
+    .nav-bar ul li a {
+        font-size: 1.5rem;
+        color: var(--blanco);
     }
 }
+
 
 
 /* Hero */
@@ -496,4 +519,36 @@ section {
 
 .btn-cotizacion {
     animation: pulso 2s infinite;
+}
+/* Loader con logo */
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+#loader img {
+    width: 150px;
+    animation: pulse 1.5s infinite;
+}
+
+/* Animación del logo */
+@keyframes pulse {
+    0% { transform: scale(0.95); opacity: 0.7; }
+    50% { transform: scale(1.05); opacity: 1; }
+    100% { transform: scale(0.95); opacity: 0.7; }
+}
+
+/* Ocultar loader */
+#loader.hidden {
+    opacity: 0;
+    visibility: hidden;
 }

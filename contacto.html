@@ -55,11 +55,39 @@
     <footer>
         <p>© 2025 NexClean - Todos los derechos reservados</p>
     </footer>
-  <script>
+ 
+<script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+
+    menuToggle.addEventListener('click', () => {
+        menu.classList.toggle('active');
+        // Cambiar icono ☰ ↔ ✖
+        menuToggle.textContent = menu.classList.contains('active') ? '✖' : '☰';
+    });
+
+    // Cierra menú al hacer clic en un enlace
+    document.querySelectorAll('#menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            menu.classList.remove('active');
+            menuToggle.textContent = '☰';
+        });
+    });
+
+    // Marcar el link activo
     document.querySelectorAll('#menu a').forEach(link => {
         if (link.href === window.location.href) {
             link.classList.add('active');
         }
+    });
+</script>
+<script>
+    // Loader
+    window.addEventListener("load", () => {
+        const loader = document.getElementById("loader");
+        setTimeout(() => {
+            loader.classList.add("hidden");
+        }, 1200); // tiempo en ms (1.2s)
     });
 </script>
 

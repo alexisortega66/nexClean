@@ -65,8 +65,8 @@
                 <h3>Limpieza Sustentable</h3>
             </div>
             <div class="product-card">
-                <img src="images/seguridad.png" alt="Seguridad Personal">
-                <h3>Seguridad Personal</h3>
+                <img src="images/seguridad.png" alt="Calidad asegurada">
+                <h3>Productos de Calidad</h3>
             </div>
             <div class="product-card">
                 <img src="images/jabon.png" alt="Equipos de Limpieza">
@@ -130,6 +130,9 @@
        💬 Solicitar por WhatsApp
     </a>
 </section>
+<div id="loader">
+    <img src="images/nexcleanLogo.png" alt="NexClean Logo">
+</div>
 
 
     <!-- Pie de página -->
@@ -138,12 +141,32 @@
     </footer>
 
 <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+
+    menuToggle.addEventListener('click', () => {
+        menu.classList.toggle('active');
+        // Cambiar icono ☰ ↔ ✖
+        menuToggle.textContent = menu.classList.contains('active') ? '✖' : '☰';
+    });
+
+    // Cierra menú al hacer clic en un enlace
+    document.querySelectorAll('#menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            menu.classList.remove('active');
+            menuToggle.textContent = '☰';
+        });
+    });
+
+    // Marcar el link activo
     document.querySelectorAll('#menu a').forEach(link => {
         if (link.href === window.location.href) {
             link.classList.add('active');
         }
     });
 </script>
+
+
 <script>
     document.addEventListener("scroll", function() {
         document.querySelectorAll('.fade-in').forEach(el => {
@@ -154,7 +177,24 @@
         });
     });
 </script>
+<script>
+    // Loader
+   window.addEventListener("load", () => {
+      const loader = document.getElementById("loader");
 
+      // Revisar si ya se mostró antes
+      if (!localStorage.getItem("loaderShown")) {
+          // Mostrar loader normal
+          setTimeout(() => {
+              loader.classList.add("hidden");
+              localStorage.setItem("loaderShown", "true"); // Marcar que ya se mostró
+          }, 1200);
+      } else {
+          // Si ya se mostró antes, ocultarlo instantáneo
+          loader.style.display = "none";
+      }
+  });
+</script>
 
 
 </body>
