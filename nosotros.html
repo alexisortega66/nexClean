@@ -8,10 +8,12 @@
 </head>
 <body>
 
- <!-- Encabezado -->
+<!-- Encabezado -->
 <header class="header-bar">
     <div class="logo-left">
+        <a href="index.html">
         <img src="images/nexcleanLogo.png" alt="NexClean Logo">
+        </a>
     </div>
     <nav class="nav-bar">
         <div class="menu-toggle" id="menu-toggle">&#9776;</div>
@@ -24,28 +26,67 @@
     </nav>
 </header>
 
-    <!-- Contenido -->
-    <main class="page-content">
+<!-- Hero de Nosotros -->
+<section class="about-bg hero-bg">
+    <div class="overlay">
         <h1>Sobre Nosotros</h1>
-        <p>En NexClean somos una empresa dedicada a ofrecer soluciones profesionales de limpieza y seguridad personal.</p>
-        <p>Nuestra misión es brindar productos de alta calidad que cuiden tanto a las personas como al medio ambiente.</p>
-    </main>
+        <p>Conoce más acerca de quiénes somos, nuestra misión y el compromiso que nos mueve día a día en NexClean.</p>
+    </div>
+</section>
 
-    <!-- Pie de página -->
-    <footer>
-        <p>© 2025 NexClean - Todos los derechos reservados</p>
-    </footer>
-   <script>
+<!-- Historia / Misión / Visión -->
+<main class="page-content">
+    <section class="info-cards">
+        <div class="card">
+            <span class="icono">🏢</span>
+            <h2>Nuestra Historia</h2>
+            <p>Nacimos con la idea de transformar la manera en que los negocios acceden a productos de limpieza y seguridad, brindando soluciones confiables para cada necesidad.</p>
+        </div>
+        <div class="card">
+            <span class="icono">🎯</span>
+            <h2>Misión</h2>
+            <p>Proveer productos de limpieza y seguridad de la más alta calidad, cuidando de las personas y del medio ambiente en cada proceso.</p>
+        </div>
+        <div class="card">
+            <span class="icono">🌍</span>
+            <h2>Visión</h2>
+            <p>Ser la empresa líder en soluciones de limpieza sustentable en Baja California Sur y expandirnos a nivel nacional.</p>
+        </div>
+    </section>
+
+    <!-- Valores -->
+    <section class="valores">
+        <h2>Nuestros Valores</h2>
+        <div class="valores-grid">
+            <div class="valor">✔ Calidad</div>
+            <div class="valor">🤝 Confianza</div>
+            <div class="valor">⚡ Eficiencia</div>
+            <div class="valor">💡 Innovación</div>
+        </div>
+    </section>
+
+    <!-- Llamado a la acción -->
+    <section class="cta">
+        <h2>¿Quieres conocernos más?</h2>
+        <p>Explora nuestro catálogo y descubre todo lo que NexClean puede ofrecer a tu negocio.</p>
+        <a href="productos.html" class="btn-catalogo">Ver Productos</a>
+    </section>
+</main>
+
+<!-- Pie de página -->
+<footer>
+    <p>© 2025 NexClean - Todos los derechos reservados</p>
+</footer>
+
+<script>
     const menuToggle = document.getElementById('menu-toggle');
     const menu = document.getElementById('menu');
 
     menuToggle.addEventListener('click', () => {
         menu.classList.toggle('active');
-        // Cambiar icono ☰ ↔ ✖
         menuToggle.textContent = menu.classList.contains('active') ? '✖' : '☰';
     });
 
-    // Cierra menú al hacer clic en un enlace
     document.querySelectorAll('#menu a').forEach(link => {
         link.addEventListener('click', () => {
             menu.classList.remove('active');
@@ -53,23 +94,11 @@
         });
     });
 
-    // Marcar el link activo
     document.querySelectorAll('#menu a').forEach(link => {
         if (link.href === window.location.href) {
             link.classList.add('active');
         }
     });
 </script>
-<script>
-    // Loader
-    window.addEventListener("load", () => {
-        const loader = document.getElementById("loader");
-        setTimeout(() => {
-            loader.classList.add("hidden");
-        }, 1200); // tiempo en ms (1.2s)
-    });
-</script>
-
-
 </body>
 </html>

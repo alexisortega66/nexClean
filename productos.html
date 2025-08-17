@@ -8,15 +8,17 @@
 </head>
 <body>
 
- <!-- Encabezado -->
+<!-- Encabezado -->
 <header class="header-bar">
     <div class="logo-left">
+        <a href="index.html">
         <img src="images/nexcleanLogo.png" alt="NexClean Logo">
+        </a>
     </div>
     <nav class="nav-bar">
         <div class="menu-toggle" id="menu-toggle">&#9776;</div>
         <ul id="menu">
-            <li><a href="index.html" >Inicio</a></li>
+            <li><a href="index.html">Inicio</a></li>
             <li><a href="productos.html">Productos</a></li>
             <li><a href="nosotros.html">Nosotros</a></li>
             <li><a href="contacto.html">Contacto</a></li>
@@ -24,38 +26,74 @@
     </nav>
 </header>
 
-
-    <!-- Contenido -->
-    <main class="page-content">
+<!-- Hero -->
+<section class="hero hero-bg">
+    <div class="overlay">
         <h1>Nuestros Productos</h1>
-        <p>En NexClean contamos con una amplia variedad de productos de limpieza, seguridad y equipos profesionales.</p>
+        <p>En NexClean contamos con una amplia variedad de soluciones de limpieza y equipos diseñados para brindarte calidad, eficiencia y seguridad.</p>
+    </div>
+</section>
 
-        <ul>
-            <li>Limpieza sustentable</li>
-            <li>Seguridad personal</li>
-            <li>Equipos de limpieza</li>
-        </ul>
-
-        <div class="catalogo-btn">
-            <a href="#" target="_blank" class="btn">Descargar Catálogo PDF</a>
+<!-- Categorías principales -->
+<main class="page-content">
+    <section class="productos-grid">
+        <div class="producto-card">
+            <img src="images/escobas.png" alt="Limpieza Sustentable">
+            <h2>Limpieza Sustentable</h2>
+            <p>Productos ecológicos que garantizan limpieza profunda cuidando el medio ambiente.</p>
         </div>
-    </main>
 
-    <!-- Pie de página -->
-    <footer>
-        <p>© 2025 NexClean - Todos los derechos reservados</p>
-    </footer>
+        <div class="producto-card">
+            <img src="images/jabon.png" alt="Equipos de Limpieza">
+            <h2>Equipos de Limpieza</h2>
+            <p>Desde herramientas básicas hasta equipos profesionales para mantener tus espacios impecables.</p>
+        </div>
+    </section>
+
+    <!-- Beneficios -->
+    <section class="beneficios">
+        <h2>¿Por qué elegir nuestros productos?</h2>
+        <div class="beneficios-grid">
+            <div class="beneficio">
+                <span class="icono">🌱</span>
+                <h3>Ecológicos</h3>
+                <p>Comprometidos con el cuidado ambiental.</p>
+            </div>
+            <div class="beneficio">
+                <span class="icono">⚡</span>
+                <h3>Eficientes</h3>
+                <p>Máxima limpieza en menos tiempo.</p>
+            </div>
+            <div class="beneficio">
+                <span class="icono">💎</span>
+                <h3>Alta calidad</h3>
+                <p>Productos duraderos y confiables.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA catálogo -->
+    <section class="catalogo-cta">
+        <h2>Descarga nuestro catálogo completo</h2>
+        <p>Explora nuestra gama de productos y encuentra la mejor solución para tu empresa o negocio.</p>
+        <a href="catalogo.pdf" target="_blank" class="btn-catalogo">📥 Descargar Catálogo PDF</a>
+    </section>
+</main>
+
+<!-- Pie de página -->
+<footer>
+    <p>© 2025 NexClean - Todos los derechos reservados</p>
+</footer>
+
 <script>
     const menuToggle = document.getElementById('menu-toggle');
     const menu = document.getElementById('menu');
 
     menuToggle.addEventListener('click', () => {
         menu.classList.toggle('active');
-        // Cambiar icono ☰ ↔ ✖
         menuToggle.textContent = menu.classList.contains('active') ? '✖' : '☰';
     });
 
-    // Cierra menú al hacer clic en un enlace
     document.querySelectorAll('#menu a').forEach(link => {
         link.addEventListener('click', () => {
             menu.classList.remove('active');
@@ -63,23 +101,12 @@
         });
     });
 
-    // Marcar el link activo
     document.querySelectorAll('#menu a').forEach(link => {
         if (link.href === window.location.href) {
             link.classList.add('active');
         }
     });
 </script>
-<script>
-    // Loader
-    window.addEventListener("load", () => {
-        const loader = document.getElementById("loader");
-        setTimeout(() => {
-            loader.classList.add("hidden");
-        }, 1200); // tiempo en ms (1.2s)
-    });
-</script>
-
 
 </body>
 </html>
