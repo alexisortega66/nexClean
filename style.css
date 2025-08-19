@@ -598,7 +598,8 @@ section {
 .cta {
     text-align: center;
     padding: 40px 20px;
-    background: var(--gris-claro);
+      background: linear-gradient(135deg, #1B3A4B, #4DB6E2);
+      color: white;
     border-radius: 12px;
     margin: 50px 0;
 }
@@ -661,7 +662,7 @@ section {
 /* CTA catálogo */
 .catalogo-cta {
     text-align: center;
-    background: var(--azul-claro);
+      background: linear-gradient(135deg, #1B3A4B, #4DB6E2);
     color: white;
     padding: 40px 20px;
     border-radius: 12px;
