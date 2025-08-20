@@ -5,13 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NexClean - Soluciones de Limpieza</title>
     <link rel="stylesheet" href="style.css">
-
-    <!-- SEO Básico -->
-    <meta name="description" content="NexClean ofrece soluciones profesionales de limpieza y seguridad con calidad garantizada y compromiso ambiental.">
+ <!-- SEO Básico -->
+    <meta name="description" content="NexClean ofrece soluciones profesionales de limpieza, calidad garantizada y compromiso ambiental.">
 
     <!-- Open Graph (para Facebook, WhatsApp, LinkedIn) -->
     <meta property="og:title" content="NexClean - Soluciones de Limpieza">
-    <meta property="og:description" content="Productos de limpieza y seguridad sustentables, con calidad garantizada.">
+    <meta property="og:description" content="Productos de limpieza y calidad garantizada.">
     <meta property="og:image" content="https://alexisortega66.github.io/nexClean/images/nexclean-share.png">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://alexisortega66.github.io/nexClean/">
@@ -19,7 +18,7 @@
     <!-- Twitter Card (para que se vea bien en Twitter/X) -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="NexClean - Soluciones de Limpieza">
-    <meta name="twitter:description" content="Productos de limpieza y seguridad sustentables, con calidad garantizada.">
+    <meta name="twitter:description" content="Productos de limpieza y calidad garantizada.">
     <meta name="twitter:image" content="https://alexisortega66.github.io/nexClean/images/nexclean-share.png">
 
     <!-- Favicon (icono de pestaña) -->
@@ -67,25 +66,30 @@
       text-decoration: underline;
     }
 
-    /* Botones de contacto */
-    .botones-contacto {
-      margin-top: 20px;
-    }
-    .botones-contacto a {
-      display: inline-block;
-      margin: 8px;
-      padding: 12px 24px;
-      border-radius: 30px;
-      background: linear-gradient(135deg, #1B3A4B, #4DB6E2);
-      color: white;
-      font-weight: bold;
-      text-decoration: none;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .botones-contacto a:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 15px rgba(27, 58, 75, 0.3);
-    }
+ .botones-contacto a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 8px;
+  padding: 12px 24px;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #1B3A4B, #4DB6E2);
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.botones-contacto a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(27, 58, 75, 0.3);
+}
+
+.botones-contacto a svg {
+  width: 20px;
+  height: 20px;
+}
+
 
     /* Mapa */
     .mapa {
@@ -122,9 +126,11 @@
   </header>
 
   <!-- Hero -->
-  <section class="contact-hero">
+  <section class="hero">
+    <div class="hero-text">
     <h1>Contáctanos</h1>
     <p>Estamos listos para ayudarte con las mejores soluciones en limpieza y seguridad.</p>
+    </div>
   </section>
 
   <!-- Info contacto -->
@@ -136,8 +142,29 @@
       <p><strong>📧 Correo:</strong> <a href="mailto:nexcleanlpz@gmail.com">nexcleanlpz@gmail.com</a></p>
 
       <div class="botones-contacto">
-        <a href="https://wa.me/526122288539?text=Hola%20quiero%20una%20cotización%20de%20productos%20NexClean" target="_blank">💬 WhatsApp</a>
-        <a href="mailto:nexcleanlpz@gmail.com">📧 Enviar Correo</a>
+                <a href="https://wa.me/526122288539?text=Hola%20quiero%20una%20cotización%20de%20productos%20NexClean" target="_blank" aria-label="WhatsApp">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+      <path d="M20.52 3.48A11.91 11.91 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.12.55 4.1 1.52 5.85L0 24l6.43-1.5A11.91 11.91 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.19-1.24-6.18-3.48-8.52zM12 22.05c-2.01 0-3.89-.54-5.5-1.47l-.39-.23-3.81.89.94-3.7-.25-.39A9.91 9.91 0 0 1 2.05 12c0-5.49 4.46-9.95 9.95-9.95 2.66 0 5.16 1.04 7.04 2.92A9.91 9.91 0 0 1 22.95 12c0 5.49-4.46 9.95-9.95 9.95zm5.47-7.21c-.25-.12-1.48-.73-1.71-.81-.23-.08-.39-.12-.55.12s-.63.81-.77.98c-.14.16-.28.18-.53.06-.25-.12-1.06-.39-2.02-1.25-.75-.67-1.26-1.5-1.41-1.75-.14-.25-.02-.38.11-.5.11-.11.25-.28.37-.42.12-.14.16-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.55-1.32-.75-1.81-.2-.48-.4-.41-.55-.42l-.47-.01c-.16 0-.43.06-.65.31s-.85.83-.85 2.03c0 1.2.87 2.36.99 2.52.12.16 1.71 2.6 4.15 3.64.58.25 1.03.4 1.38.51.58.18 1.11.15 1.53.09.47-.06 1.48-.6 1.69-1.18.2-.58.2-1.08.14-1.18-.06-.1-.23-.16-.48-.28z"/>
+    </svg>
+    WhatsApp
+  </a>
+           <!-- Botón de Facebook -->
+    <a href="https://www.facebook.com/tu-pagina" target="_blank" aria-label="Facebook">
+      <!-- Icono Facebook SVG -->
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="#1877F2" xmlns="http://www.w3.org/2000/svg">
+        <path d="M22.675 0H1.325C0.593 0 0 0.593 0 1.325V22.675C0 23.407 0.593 24 1.325 24H12.82V14.708H9.692V11.077H12.82V8.413C12.82 5.33 14.693 3.646 17.427 3.646C18.705 3.646 19.855 3.742 20.141 3.78V6.96H18.401C16.858 6.96 16.57 7.703 16.57 8.78V11.077H20.02L19.57 14.708H16.57V24H22.675C23.407 24 24 23.407 24 22.675V1.325C24 0.593 23.407 0 22.675 0Z"/>
+      </svg>
+      Facebook
+    </a>
+
+
+  <!-- Correo -->
+  <a href="mailto:nexcleanlpz@gmail.com" aria-label="Correo">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 13.065L0 4.5V19.5h24V4.5l-12 8.565zm0-2.13l12-8.565H0l12 8.565z"/>
+    </svg>
+    Correo
+  </a>
         <a href="tel:+526122288539">📞 Llamar</a>
         <a href="tel:+526121544042">📞 Llamar</a>
       </div>
@@ -157,9 +184,17 @@
   </main>
 
   <!-- Pie de página -->
-  <footer>
-    <p>© 2025 NexClean - Todos los derechos reservados</p>
-  </footer>
+ <footer>
+  <p>© 2025 NexClean - Todos los derechos reservados</p>
+  <div class="redes-footer">
+    <a href="https://www.facebook.com/share/15xFyZdoJt/?mibextid=wwXIfr" target="_blank" aria-label="Facebook">
+      <!-- Icono Facebook SVG -->
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="#FFFFFF" xmlns="http://www.w3.org/2000/svg">
+        <path d="M22.675 0H1.325C0.593 0 0 0.593 0 1.325V22.675C0 23.407 0.593 24 1.325 24H12.82V14.708H9.692V11.077H12.82V8.413C12.82 5.33 14.693 3.646 17.427 3.646C18.705 3.646 19.855 3.742 20.141 3.78V6.96H18.401C16.858 6.96 16.57 7.703 16.57 8.78V11.077H20.02L19.57 14.708H16.57V24H22.675C23.407 24 24 23.407 24 22.675V1.325C24 0.593 23.407 0 22.675 0Z"/>
+      </svg>
+    </a>
+  </div>
+</footer>
 
   <!-- Script menú hamburguesa -->
   <script>

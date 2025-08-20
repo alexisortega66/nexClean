@@ -7,11 +7,11 @@
     <link rel="stylesheet" href="style.css">
 
     <!-- SEO Básico -->
-    <meta name="description" content="NexClean ofrece soluciones profesionales de limpieza y seguridad con calidad garantizada y compromiso ambiental.">
+    <meta name="description" content="NexClean ofrece soluciones profesionales de limpieza, calidad garantizada y compromiso ambiental.">
 
     <!-- Open Graph (para Facebook, WhatsApp, LinkedIn) -->
     <meta property="og:title" content="NexClean - Soluciones de Limpieza">
-    <meta property="og:description" content="Productos de limpieza y seguridad sustentables, con calidad garantizada.">
+    <meta property="og:description" content="Productos de limpieza y calidad garantizada.">
     <meta property="og:image" content="https://alexisortega66.github.io/nexClean/images/nexclean-share.png">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://alexisortega66.github.io/nexClean/">
@@ -19,7 +19,7 @@
     <!-- Twitter Card (para que se vea bien en Twitter/X) -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="NexClean - Soluciones de Limpieza">
-    <meta name="twitter:description" content="Productos de limpieza y seguridad sustentables, con calidad garantizada.">
+    <meta name="twitter:description" content="Productos de limpieza y calidad garantizada.">
     <meta name="twitter:image" content="https://alexisortega66.github.io/nexClean/images/nexclean-share.png">
 
     <!-- Favicon (icono de pestaña) -->
@@ -50,7 +50,7 @@
   <div class="hero-text">
     <h1>Encuentra los productos ideales para ti</h1>
     <h2 class="animated-text"></h2>
-    <p>Limpieza y seguridad para tu negocio en un solo lugar.</p>
+    <p>Limpieza y calidad para tu negocio en un solo lugar.</p>
 <div class="catalogo-btn">
             <a href="productos.html" target="_blank" class="btn">Encuentralos aqui</a>
         </div>  </div>
@@ -110,9 +110,18 @@
 
 
     <!-- Pie de página -->
-    <footer>
-        <p>© 2025 NexClean - Todos los derechos reservados</p>
-    </footer>
+  <footer>
+  <p>© 2025 NexClean - Todos los derechos reservados</p>
+  <div class="redes-footer">
+    <a href="https://www.facebook.com/share/15xFyZdoJt/?mibextid=wwXIfr" target="_blank" aria-label="Facebook">
+      <!-- Icono Facebook SVG -->
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="#FFFFFF" xmlns="http://www.w3.org/2000/svg">
+        <path d="M22.675 0H1.325C0.593 0 0 0.593 0 1.325V22.675C0 23.407 0.593 24 1.325 24H12.82V14.708H9.692V11.077H12.82V8.413C12.82 5.33 14.693 3.646 17.427 3.646C18.705 3.646 19.855 3.742 20.141 3.78V6.96H18.401C16.858 6.96 16.57 7.703 16.57 8.78V11.077H20.02L19.57 14.708H16.57V24H22.675C23.407 24 24 23.407 24 22.675V1.325C24 0.593 23.407 0 22.675 0Z"/>
+      </svg>
+    </a>
+  </div>
+</footer>
+
 
 <script>
     const menuToggle = document.getElementById('menu-toggle');
@@ -145,31 +154,22 @@
     const textElement = document.querySelector(".animated-text");
     const phrases = ["En NexClean", "Limpieza profesional", "Productos de Calidad"];
     let phraseIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
 
-    function typeEffect() {
-      const currentPhrase = phrases[phraseIndex];
-      if (!isDeleting) {
-        textElement.textContent = currentPhrase.substring(0, charIndex + 1);
-        charIndex++;
-        if (charIndex === currentPhrase.length) {
-          isDeleting = true;
-          setTimeout(typeEffect, 1500); // pausa antes de borrar
-          return;
-        }
-      } else {
-        textElement.textContent = currentPhrase.substring(0, charIndex - 1);
-        charIndex--;
-        if (charIndex === 0) {
-          isDeleting = false;
-          phraseIndex = (phraseIndex + 1) % phrases.length;
-        }
-      }
-      setTimeout(typeEffect, isDeleting ? 80 : 120); // velocidad
+    function showPhrase() {
+      // Cambiar texto
+      textElement.textContent = phrases[phraseIndex];
+      // Aplicar fade-in
+      textElement.classList.add("show");
+
+      // Después de 2 segundos, quitar clase para fade-out
+      setTimeout(() => {
+        textElement.classList.remove("show");
+        phraseIndex = (phraseIndex + 1) % phrases.length;
+        setTimeout(showPhrase, 500); // esperar un poco antes de la siguiente frase
+      }, 2000);
     }
 
-    typeEffect();
+    showPhrase();
   });
 </script>
 
