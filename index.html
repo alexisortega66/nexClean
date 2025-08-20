@@ -46,51 +46,23 @@
     </nav>
 </header>
    <!-- Sección de bienvenida -->
-<section id="inicio" class="hero hero-bg">
-    <div class="overlay">
-        <div class="hero-text">
-            <h1>Bienvenido a NexClean</h1>
-            <p>En NexClean, creemos que la limpieza no es solo una tarea, es un compromiso con la salud, la seguridad y la imagen de tu negocio. Por eso, te ofrecemos soluciones profesionales respaldadas por años de experiencia, un equipo especializado y productos de primera calidad.</p>
-            <p>Ya sea que necesites mantener impecables tus instalaciones, proteger a tu personal o cuidar el medio ambiente, tenemos todo lo que buscas en un solo lugar.</p>
-            <a href="contacto.html" class="btn-catalogo">Contáctanos</a>
-        </div>
-    </div>
+<section class="hero">
+  <div class="hero-text">
+    <h1>Encuentra los productos ideales para ti</h1>
+    <h2 class="animated-text"></h2>
+    <p>Limpieza y seguridad para tu negocio en un solo lugar.</p>
+<div class="catalogo-btn">
+            <a href="productos.html" target="_blank" class="btn">Encuentralos aqui</a>
+        </div>  </div>
 </section>
 
 
-    <!-- Categorías de productos -->
-    <section id="productos">
-        <h2>Nuestros Productos</h2>
-        <div class="product-grid">
-            <div class="product-card">
-                <img src="images/escobas.png" alt="Limpieza Sustentable">
-                <h3>Limpieza Sustentable</h3>
-            </div>
-            <div class="product-card">
-                <img src="images/seguridad.png" alt="Calidad asegurada">
-                <h3>Productos de Calidad</h3>
-            </div>
-            <div class="product-card">
-                <img src="images/jabon.png" alt="Equipos de Limpieza">
-                <h3>Equipos de Limpieza</h3>
-            </div>
-        </div>
-        <div class="catalogo-btn">
-            <a href="productos.html" target="_blank" class="btn">Descubrelos</a>
-        </div>
-    </section>
 
-
-<!-- Nosotros -->
-<section id="nosotros" class="about about-bg">
-    <div class="overlay">
-        <h2>Sobre Nosotros</h2>
-        <p>En NexClean no solo vendemos productos de limpieza, sino que ofrecemos soluciones integrales que combinan calidad, seguridad y compromiso ambiental.</p>
-        <p>Nos especializamos en proveer a negocios, industrias y comercios productos que cumplen con los más altos estándares, respaldados por proveedores certificados y tecnología de vanguardia.</p>
-        <a href="nosotros.html" class="btn-catalogo">Saber Más</a>
-    </div>
+<section class="frase">
+  <blockquote>
+    "La limpieza refleja la excelencia de tu negocio. NexClean te ayuda a lograrlo."
+  </blockquote>
 </section>
-<!-- Nueva sección -->
 <!-- ¿Por qué comprar con nosotros? -->
 <section class="porque-comprar fade-in">
     <h2>¿Por qué comprar con nosotros?</h2>
@@ -166,6 +138,39 @@
             link.classList.add('active');
         }
     });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const textElement = document.querySelector(".animated-text");
+    const phrases = ["En NexClean", "Limpieza profesional", "Productos de Calidad"];
+    let phraseIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+
+    function typeEffect() {
+      const currentPhrase = phrases[phraseIndex];
+      if (!isDeleting) {
+        textElement.textContent = currentPhrase.substring(0, charIndex + 1);
+        charIndex++;
+        if (charIndex === currentPhrase.length) {
+          isDeleting = true;
+          setTimeout(typeEffect, 1500); // pausa antes de borrar
+          return;
+        }
+      } else {
+        textElement.textContent = currentPhrase.substring(0, charIndex - 1);
+        charIndex--;
+        if (charIndex === 0) {
+          isDeleting = false;
+          phraseIndex = (phraseIndex + 1) % phrases.length;
+        }
+      }
+      setTimeout(typeEffect, isDeleting ? 80 : 120); // velocidad
+    }
+
+    typeEffect();
+  });
 </script>
 
 
