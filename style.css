@@ -140,27 +140,23 @@
 }
 
 .animated-text {
-  font-size: 1.4rem;
+  font-size: 2rem;
   font-weight: bold;
   color: #0078a0;
-  margin-bottom: 15px;
-  border-right: 2px solid #0078a0;
-  white-space: nowrap;
-  overflow: hidden;
-  display: inline-block;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  display: block;        /* Para que se acomode en su contenedor */
+  text-align: center;    /* Centrado */
+  white-space: normal;   /* Permite que se haga salto de línea en celular */
+  word-wrap: break-word; /* Evita que se salga del contenedor */
 }
 
-.animated-text {
-    font-size: 2rem;
-    font-weight: bold;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-    display: inline-block;
-  }
+.animated-text.show {
+  opacity: 1;
+}
 
-  .animated-text.show {
-    opacity: 1;
-  }
+
+
 
 .hero-text p {
   color: #555;
@@ -321,15 +317,28 @@ footer {
     color: var(--blanco);
     text-align: center;
     padding: 15px;
+
+    display: flex;             /* hace que los elementos se acomoden en fila */
+    justify-content: center;   /* centra horizontalmente */
+    align-items: center;       /* alinea verticalmente */
+    gap: 15px;                 /* separación entre texto e íconos */
+    flex-wrap: wrap;           /* para que en pantallas chicas no se encimen */
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        gap: 10px;
-    }
+footer p {
+    margin: 0; /* quita el espacio por defecto */
 }
+
+footer a {
+    color: var(--blanco);
+    text-decoration: none;
+    font-size: 1.4rem;  /* tamaño de los iconos */
+}
+
+footer a:hover {
+    color: var(--verde); /* ejemplo de hover */
+}
+
  .catalogo-btn {
     text-align: center;
     margin-top: 20px;
